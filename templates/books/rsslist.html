@@ -1,0 +1,23 @@
+<html>
+<head><title> RSS List </title></head>
+
+{% load staticfiles %}
+<link href="{% static "books/rss.css" %}" rel="stylesheet" type="text/css"/>
+
+<ul>
+{% for item in rss_entries %}
+	
+<h1>{{ item.title }}</h1>
+
+
+    {{ item.content|safe }}
+
+
+	<HR style="FILTER: alpha(opacity=100,finishopacity=0,style=3)"  color=#987cb9 SIZE=3>
+	<br/>
+{% endfor %}
+</ul>
+
+
+</body>
+</html>
