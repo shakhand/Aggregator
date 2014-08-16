@@ -1,8 +1,11 @@
 Aggregator
 ==========
+* Install:
+1. install python 3.x
+2. install django 1.7 or higher version
+3. install BeatifulSoup4   
+# pip install BeatifulSoup4
 
-* Dependency:
-BeautifulSoup4
 
 
 * How to add information 
