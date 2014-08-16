@@ -36,7 +36,10 @@ class Command(BaseCommand):
         entries = main_div.find_all(id=re.compile(r'post-\d+'))
         for entry in entries:
             a_tag = entry.find('h3').a
-            
+            if len( RSSEntry.objects.filter(title = a_tag.text)) > 0:
+                self.stdout.write("'%s' already exist"%(a_tag.text))
+                continue
+                
             rss = RSSEntry()
             rss.title = a_tag.text
             rss.link = a_tag['href']
