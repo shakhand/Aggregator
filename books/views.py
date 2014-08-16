@@ -28,13 +28,15 @@ def contact(request):
     else:
         form = ContactForm()
     return render_to_response('books/contact_form.html', {'form':form})
-	
+    
 def list_rss(request):
-	entries = RSSEntry.objects.all()
-	return render_to_response('books/rsslist.html', {'rss_entries': entries})
-	#return HttpResponse("Hello World")
-		
-	
+    entries = RSSEntry.objects.all()
+    return render_to_response('books/rsslist.html', {'rss_entries': entries})
+    #return HttpResponse("Hello World")
+        
+def demo(request):
+    entries = RSSEntry.objects.all()
+    return render_to_response('books/demo.html', {'rss_entries': entries})
     
 def greet(person_name, gretting):
     message = "%s %s" % (grettting, person_name)

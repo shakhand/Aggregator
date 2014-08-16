@@ -1,6 +1,6 @@
 from django.conf.urls import include, url
 from django.contrib import admin
-from books.views import contact, list_rss
+from books.views import list_rss, demo
 
 
 urlpatterns = [
@@ -10,5 +10,5 @@ urlpatterns = [
 
     url(r'^admin/', include(admin.site.urls)),
     url(r'^list/rss/', list_rss),
-    url(r'^contact/', contact),
+    url(r'^demo/', demo),
 ]

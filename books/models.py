@@ -28,13 +28,25 @@ class Book(models.Model):
     def __str__(self):
         return self.title
         
+class Site(models.Model):
+    link = models.URLField()
+    name = models.CharField(max_length=100)
+    icon = models.ImageField(upload_to='sites/leifeng', null=True)
+    #identifier = models.CharField(max_length=100)
+    
+    
+    def __str__(self):
+        return self.name
+        
+        
 class RSSEntry(models.Model):
     title = models.CharField(max_length=100)
     summary = models.TextField()
     link = models.URLField(max_length=200)
-    source_site = models.URLField()
+    site = models.ForeignKey(Site, null=True)
     content = models.TextField(null=True, blank=True)
     publication_date = models. DateTimeField(null=True, blank=True)
+    image = models.ImageField(upload_to='sites/leifeng', null=True)
     
     def __str__(self):
         return self.title

@@ -12,6 +12,7 @@ class BookAdmin(admin.ModelAdmin):
     filter_horizontal = ('authors',)
     raw_id_fields = ('publisher',)
 
+admin.site.register(models.Site)
 admin.site.register(models.RSSEntry)
 admin.site.register(models.Publisher)
 admin.site.register(models.Book, BookAdmin)
