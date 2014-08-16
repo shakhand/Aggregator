@@ -1,2 +1,6 @@
 Aggregator
 ==========
+
+Dependency:
+BeautifulSoup4
+
